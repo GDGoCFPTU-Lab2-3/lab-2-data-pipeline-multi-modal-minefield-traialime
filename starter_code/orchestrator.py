@@ -35,14 +35,58 @@ def main():
     output_path = os.path.join(os.path.dirname(SCRIPT_DIR), "processed_knowledge_base.json")
     # ----------------------------------------------
 
-    # TODO: Call each processing function (extract_pdf_data, clean_transcript, etc.)
-    # TODO: Run quality gates (run_quality_gate) before adding to final_kb
-    # TODO: Save final_kb to output_path using json.dump
-    
-    # Example:
-    # doc = extract_pdf_data(pdf_path)
-    # if doc and run_quality_gate(doc):
-    #     final_kb.append(doc)
+    # 1. PDF Processing (Gemini API)
+    print("--- Processing PDF ---")
+    doc = extract_pdf_data(pdf_path)
+    if doc and run_quality_gate(doc):
+        final_kb.append(doc)
+
+    # 2. Transcript Processing
+    print("--- Processing Transcript ---")
+    doc = clean_transcript(trans_path)
+    if doc and run_quality_gate(doc):
+        final_kb.append(doc)
+
+    # 3. HTML Catalog Processing
+    print("--- Processing HTML Catalog ---")
+    docs = parse_html_catalog(html_path)
+    for doc in docs:
+        if run_quality_gate(doc):
+            final_kb.append(doc)
+
+    # 4. CSV Sales Processing
+    print("--- Processing CSV Sales ---")
+    docs = process_sales_csv(csv_path)
+    for doc in docs:
+        if run_quality_gate(doc):
+            final_kb.append(doc)
+
+    # 5. Legacy Code Processing
+    print("--- Processing Legacy Code ---")
+    doc = extract_logic_from_code(code_path)
+    if doc and run_quality_gate(doc):
+        final_kb.append(doc)
+
+    # 6. Save final_kb to output_path
+    print(f"--- Saving output to {output_path} ---")
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(final_kb, f, ensure_ascii=False, indent=2, default=str)
+
+    # 7. SCHEMA MIGRATION (V2) - Mid-lab Incident requirement
+    print("--- Migrating to Schema V2 ---")
+    from schema import migrate_v1_to_v2
+    final_kb_v2 = []
+    for doc_dict in final_kb:
+        # Convert dict to UnifiedDocument first
+        from schema import UnifiedDocument
+        v1_obj = UnifiedDocument(**doc_dict)
+        v2_obj = migrate_v1_to_v2(v1_obj)
+        final_kb_v2.append(v2_obj.model_dump())
+        
+    output_path_v2 = os.path.join(os.path.dirname(SCRIPT_DIR), "processed_knowledge_base_v2.json")
+    with open(output_path_v2, "w", encoding="utf-8") as f:
+        json.dump(final_kb_v2, f, ensure_ascii=False, indent=2, default=str)
+    print(f"--- Schema V2 output saved to {output_path_v2} ---")
 
     end_time = time.time()
     print(f"Pipeline finished in {end_time - start_time:.2f} seconds.")

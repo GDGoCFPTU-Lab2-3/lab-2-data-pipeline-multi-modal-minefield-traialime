@@ -6,12 +6,13 @@ from dotenv import load_dotenv
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
+import time
+
 def extract_pdf_data(file_path):
     if not os.path.exists(file_path):
         print(f"Error: File not found at {file_path}")
         return None
         
-    # Thay đổi model name để tránh lỗi 404 trên các phiên bản API cũ
     model = genai.GenerativeModel('gemini-2.5-flash')
     
     print(f"Uploading {file_path} to Gemini...")
@@ -35,10 +36,24 @@ Output exactly as a JSON object matching this exact format:
 """
     
     print("Generating content from PDF using Gemini...")
-    response = model.generate_content([pdf_file, prompt])
-    content_text = response.text
+    MAX_RETRIES = 5
+    response_text = ""
+    for attempt in range(MAX_RETRIES):
+        try:
+            response = model.generate_content([pdf_file, prompt])
+            response_text = response.text
+            break
+        except Exception as e:
+            if "429" in str(e) and attempt < MAX_RETRIES - 1:
+                wait = 2 ** attempt  # 1s, 2s, 4s, 8s, 16s
+                print(f"Rate limited. Retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"Failed to generate content: {e}")
+                return None
     
     # Simple cleanup if the response is wrapped in markdown json block
+    content_text = response_text.strip()
     if content_text.startswith("```json"):
         content_text = content_text[7:]
     if content_text.endswith("```"):
@@ -46,5 +61,10 @@ Output exactly as a JSON object matching this exact format:
     if content_text.startswith("```"):
         content_text = content_text[3:]
         
-    extracted_data = json.loads(content_text.strip())
-    return extracted_data
+    try:
+        extracted_data = json.loads(content_text.strip())
+        return extracted_data
+    except json.JSONDecodeError as e:
+        print(f"Failed to parse JSON from Gemini response: {e}")
+        print(f"Raw response: {response_text}")
+        return None

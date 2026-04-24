@@ -1,0 +1,342 @@
+[
+  {
+    "document_id": "pdf-doc-001",
+    "content": "Summary: This document is Purchase Order No. 2182354, issued by SNC Lavalin O&M Inc. on November 2, 2023, for \"T- Routine Maintenance.\" The order is placed with ADVANCED PROPERTY SYSTEMS LTD. for services at 10370 Teresa Road, Lake Country, specifically to address issues with a door latch that is difficult to open/close and gets stuck. The total cost for a general maintenance call and mileage is $51.85, with instructions to repair the latch, take before/after pictures, and send evidence and feedback. ",
+    "source_type": "PDF",
+    "author": "SNC Lavalin O&M Inc.",
+    "timestamp": null,
+    "source_metadata": {
+      "original_file": "lecture_notes.pdf"
+    }
+  },
+  {
+    "document_id": "video-transcript-001",
+    "content": "Chào mừng các bạn đến với buổi học hôm nay về Data Pipeline Engineering.\n \n  Hôm nay chúng ta sẽ nói về việc xử lý dữ liệu phi cấu trúc, ví dụ như PDF và Video.\n  Một vấn đề lớn là Semantic Drift. Các bạn có biết không?\n  Dạ em có nghe qua, nhưng  nó có liên quan gì đến Zillow không ạ?\n  Có chứ! Zillow là ví dụ điển hình của việc mô hình bị hỏng do dữ liệu đầu vào thay đổi.\n   Đừng để mô hình của bạn trở thành 'rác vào, rác ra'.\n  À, một lưu ý nhỏ cho bài tập: Giá của sản phẩm VinAI Pro là năm trăm nghìn VND. Nhớ nhé, 500,000 VND.\n  \n  Bây giờ chúng ta hãy bắt đầu thực hành.",
+    "source_type": "Video",
+    "author": "Speaker 1",
+    "timestamp": null,
+    "source_metadata": {
+      "detected_price_vnd": 500000,
+      "language": "vi",
+      "original_file": "demo_transcript.txt"
+    }
+  },
+  {
+    "document_id": "html-product-001",
+    "content": "VinAI Laptop Pro 14\" - Laptop - Price: 28500000 VND - Stock: 45",
+    "source_type": "HTML",
+    "author": "VinShop",
+    "timestamp": null,
+    "source_metadata": {
+      "product_id": "SP-001",
+      "product_name": "VinAI Laptop Pro 14\"",
+      "category": "Laptop",
+      "price_vnd": 28500000,
+      "stock": 45,
+      "rating": "4.8/5"
+    }
+  },
+  {
+    "document_id": "html-product-005",
+    "content": "Tai nghe chống ồn AI-Ear Pro - Âm thanh - Price: 3200000 VND - Stock: 28",
+    "source_type": "HTML",
+    "author": "VinShop",
+    "timestamp": null,
+    "source_metadata": {
+      "product_id": "SP-005",
+      "product_name": "Tai nghe chống ồn AI-Ear Pro",
+      "category": "Âm thanh",
+      "price_vnd": 3200000,
+      "stock": 28,
+      "rating": "không có đánh giá"
+    }
+  },
+  {
+    "document_id": "csv-sale-1",
+    "content": "Sale record: Laptop VinAI Pro 14, price 1200.0 USD",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-15",
+    "source_metadata": {
+      "sale_id": 1,
+      "product_name": "Laptop VinAI Pro 14",
+      "category": "Electronics",
+      "price": 1200.0,
+      "currency": "USD",
+      "stock_quantity": 45
+    }
+  },
+  {
+    "document_id": "csv-sale-2",
+    "content": "Sale record: Wireless Mouse, price 250000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-15",
+    "source_metadata": {
+      "sale_id": 2,
+      "product_name": "Wireless Mouse",
+      "category": "Electronics",
+      "price": 250000.0,
+      "currency": "VND",
+      "stock_quantity": 120
+    }
+  },
+  {
+    "document_id": "csv-sale-3",
+    "content": "Sale record: USB-C Hub 7-Port, price nan USD",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-16",
+    "source_metadata": {
+      "sale_id": 3,
+      "product_name": "USB-C Hub 7-Port",
+      "category": "Electronics",
+      "price": NaN,
+      "currency": "USD",
+      "stock_quantity": 0
+    }
+  },
+  {
+    "document_id": "csv-sale-4",
+    "content": "Sale record: Mechanical Keyboard, price 1500000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-17",
+    "source_metadata": {
+      "sale_id": 4,
+      "product_name": "Mechanical Keyboard",
+      "category": "Electronics",
+      "price": 1500000.0,
+      "currency": "VND",
+      "stock_quantity": 30
+    }
+  },
+  {
+    "document_id": "csv-sale-5",
+    "content": "Sale record: HDMI Cable 2m, price 5.0 USD",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-17",
+    "source_metadata": {
+      "sale_id": 5,
+      "product_name": "HDMI Cable 2m",
+      "category": "Accessories",
+      "price": 5.0,
+      "currency": "USD",
+      "stock_quantity": 200
+    }
+  },
+  {
+    "document_id": "csv-sale-6",
+    "content": "Sale record: Monitor 27 inch 4K, price 8500000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-18",
+    "source_metadata": {
+      "sale_id": 6,
+      "product_name": "Monitor 27 inch 4K",
+      "category": "Electronics",
+      "price": 8500000.0,
+      "currency": "VND",
+      "stock_quantity": 12
+    }
+  },
+  {
+    "document_id": "csv-sale-8",
+    "content": "Sale record: SSD 1TB NVMe, price 2200000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-19",
+    "source_metadata": {
+      "sale_id": 8,
+      "product_name": "SSD 1TB NVMe",
+      "category": "Electronics",
+      "price": 2200000.0,
+      "currency": "VND",
+      "stock_quantity": 88
+    }
+  },
+  {
+    "document_id": "csv-sale-10",
+    "content": "Sale record: Bluetooth Speaker, price 850000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-20",
+    "source_metadata": {
+      "sale_id": 10,
+      "product_name": "Bluetooth Speaker",
+      "category": "Electronics",
+      "price": 850000.0,
+      "currency": "VND",
+      "stock_quantity": 40
+    }
+  },
+  {
+    "document_id": "csv-sale-11",
+    "content": "Sale record: Gaming Headset, price 1200000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-21",
+    "source_metadata": {
+      "sale_id": 11,
+      "product_name": "Gaming Headset",
+      "category": "Electronics",
+      "price": 1200000.0,
+      "currency": "VND",
+      "stock_quantity": 25
+    }
+  },
+  {
+    "document_id": "csv-sale-12",
+    "content": "Sale record: Power Bank 20000mAh, price 600000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-21",
+    "source_metadata": {
+      "sale_id": 12,
+      "product_name": "Power Bank 20000mAh",
+      "category": "Accessories",
+      "price": 600000.0,
+      "currency": "VND",
+      "stock_quantity": 70
+    }
+  },
+  {
+    "document_id": "csv-sale-14",
+    "content": "Sale record: Phone Case Premium, price 150000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-22",
+    "source_metadata": {
+      "sale_id": 14,
+      "product_name": "Phone Case Premium",
+      "category": "Accessories",
+      "price": 150000.0,
+      "currency": "VND",
+      "stock_quantity": 300
+    }
+  },
+  {
+    "document_id": "csv-sale-15",
+    "content": "Sale record: Laptop VinAI Pro 14, price 1200.0 USD",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-22",
+    "source_metadata": {
+      "sale_id": 15,
+      "product_name": "Laptop VinAI Pro 14",
+      "category": "Electronics",
+      "price": 1200.0,
+      "currency": "USD",
+      "stock_quantity": 45
+    }
+  },
+  {
+    "document_id": "csv-sale-16",
+    "content": "Sale record: Tablet 10 inch, price 5500000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-23",
+    "source_metadata": {
+      "sale_id": 16,
+      "product_name": "Tablet 10 inch",
+      "category": "Electronics",
+      "price": 5500000.0,
+      "currency": "VND",
+      "stock_quantity": 20
+    }
+  },
+  {
+    "document_id": "csv-sale-17",
+    "content": "Sale record: Earbuds TWS Pro, price 750000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-23",
+    "source_metadata": {
+      "sale_id": 17,
+      "product_name": "Earbuds TWS Pro",
+      "category": "Electronics",
+      "price": 750000.0,
+      "currency": "VND",
+      "stock_quantity": 60
+    }
+  },
+  {
+    "document_id": "csv-sale-18",
+    "content": "Sale record: Screen Protector, price 85000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-24",
+    "source_metadata": {
+      "sale_id": 18,
+      "product_name": "Screen Protector",
+      "category": "Accessories",
+      "price": 85000.0,
+      "currency": "VND",
+      "stock_quantity": 500
+    }
+  },
+  {
+    "document_id": "csv-sale-19",
+    "content": "Sale record: External HDD 2TB, price 1800000.0 VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-24",
+    "source_metadata": {
+      "sale_id": 19,
+      "product_name": "External HDD 2TB",
+      "category": "Electronics",
+      "price": 1800000.0,
+      "currency": "VND",
+      "stock_quantity": 35
+    }
+  },
+  {
+    "document_id": "csv-sale-20",
+    "content": "Sale record: RAM DDR5 16GB, price nan VND",
+    "source_type": "CSV",
+    "author": "Unknown",
+    "timestamp": "2026-01-25",
+    "source_metadata": {
+      "sale_id": 20,
+      "product_name": "RAM DDR5 16GB",
+      "category": "Electronics",
+      "price": NaN,
+      "currency": "VND",
+      "stock_quantity": 42
+    }
+  },
+  {
+    "document_id": "code-legacy-001",
+    "content": "Business Rules extracted from D:\\Labs\\Lab17\\vinuni_day14-multi-modal-minefield-data-pipeline-lab-VinUni_Codelab3_Advanced\\raw_data\\legacy_pipeline.py: Business Logic Rule 001:. Business Logic Rule 002:. WARNING: legacy_tax_calc comment says 8% but code uses 10%",
+    "source_type": "Code",
+    "author": "Senior Dev (retired)",
+    "timestamp": null,
+    "source_metadata": {
+      "filename": "legacy_pipeline.py",
+      "functions": [
+        {
+          "name": "calculate_discount",
+          "docstring": "Business Logic Rule 001: \nIf customer tier is 'GOLD', apply 15% discount. \nIf tier is 'SILVER', apply 10% discount.\nOtherwise, no discount.\n\nIMPORTANT: Discounts are NOT cumulative with seasonal sales."
+        },
+        {
+          "name": "validate_transaction_id",
+          "docstring": "No docstring provided"
+        },
+        {
+          "name": "get_region_code",
+          "docstring": "Business Logic Rule 002:\nMap city names to region codes.\n- Hanoi -> 'HN'\n- Ho Chi Minh City -> 'HCM'\n- Da Nang -> 'DN'\n- Anything else -> 'OT' (Other)"
+        },
+        {
+          "name": "legacy_tax_calc",
+          "docstring": "No docstring provided"
+        }
+      ],
+      "rules_detected": [
+        "Business Logic Rule 001:",
+        "Business Logic Rule 002:",
+        "WARNING: legacy_tax_calc comment says 8% but code uses 10%"
+      ]
+    }
+  }
+]
